@@ -134,16 +134,19 @@ The server runs on `http://localhost:3000`. The Android emulator reaches it via 
 ### 2. Run the Android App
 
 1. Open the project in Android Studio.
-2. Sync Gradle.
-3. Build and run on an emulator or connected device.
+2. In the project root `local.properties` file (same level as `settings.gradle.kts`), add your Maps key:
+   ```properties
+   MAPS_API_KEY=your_api_key_here
+   ```
+3. If `local.properties` already exists (it usually contains `sdk.dir=...`), keep existing lines and append `MAPS_API_KEY=...`.
+4. Sync Gradle.
+5. Build and run on an emulator or connected device.
 
-### 3. Google Maps (Optional)
+### 3. Google Maps Configuration Notes
 
-To enable the map screen, add your Google Maps API key to `local.properties`:
-
-```properties
-MAPS_API_KEY=your_api_key_here
-```
+- `local.properties` is gitignored, so the API key is not committed.
+- The app reads `MAPS_API_KEY` during build and injects it into `AndroidManifest.xml` as `com.google.android.geo.API_KEY`.
+- Without a valid key, the map screen will not load map tiles.
 
 ## API Endpoints
 

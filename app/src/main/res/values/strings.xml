@@ -1,6 +1,3 @@
 <resources>
     <string name="app_name">ComposeTutorial</string>
-
-    <!-- Google Maps API Key used by com.google.android.geo.API_KEY in AndroidManifest.xml -->
-    <string name="google_maps_key">AIzaSyAvx5RdwIEqy0DjAvqIxjuJkdkGD7Wl5aE</string>
 </resources>
